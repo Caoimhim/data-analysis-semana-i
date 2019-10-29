@@ -11,7 +11,11 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 data = pd.read_csv("sample_semanai.csv")
 
-# hist =
+data_ham = data[data["Tipo de grupo"] == "Alimentos"]
+ham_hist = pyx.histogram(data_ham, x="Clave platillo")
+
+data_bebidas = data[data["Tipo de grupo"] == "Bebidas"]
+bebidas_hist = pyx.histogram(data_bebidas, x="Clave platillo")
 
 app = dash.Dash()
 app.layout = html.Div([
@@ -19,27 +23,37 @@ app.layout = html.Div([
         html.Div([
             html.H3('Histograma'),
             dcc.Graph(
-                id='g1',
+                id='hist_alimentos',
                 figure={
                     'data': [
-                        {'x': data["Clave platillo"],
-                            'y':[], 'type': 'histogram'}
-                    ]}),
+                        {
+                            'x': data_ham['Clave platillo'],
+                            #'text': data_ham['Platillo'],
+                            #'customdata': df['storenum'],
+                            #'name': 'Open Date',
+                            'type': 'histogram'
+                        },
+                    ], 'layout': {}
+                }
+            ),
 
         html.Div([
-            html.H3('Grafica 2'),
-            dcc.Graph(id='g2', figure={'data': [{'y': [1, 2, 3]}]})
-        ], className="six columns"),
-        html.Div([
-            html.H3('Grafica 3'),
-            dcc.Graph(id='g3', figure={'data': [{'y': [1, 2, 3]}]})
-        ], className="six columns"),
-        html.Div([
-            html.H3('Grafica 4'),
-            dcc.Graph(id='g4', figure={'data': [{'y': [1, 2, 3]}]})
-        ], className="six columns"),
-    ], className="row")
-])
+            html.H3('Histograma de Bebidas'),
+            dcc.Graph(
+                id='hist_bebidas',
+                figure={
+                    'data': [
+                        {
+                            'x': data_bebidas['Clave platillo'],
+                            'type': 'histogram'
+                        },
+                    ],
+                    'layout':{}
+                }
+            )
+        ])
+
+    ])
 
 app.css.append_css({
     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'

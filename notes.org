@@ -1,3 +1,4 @@
+* Sesion 1
 Hay familias de productos, aprox 10
 
 cada prodocto tiene un código
@@ -11,11 +12,35 @@ vamos a trabajar con una muestra aleatoria, por confidencialidad
 La primera etapa será visualizar los datos.
 EVITAR: usar cajas negras/girses para todo
 
-*  Visualización:
+**   Visualización:
 Utilizaremos graficos de frequencia (histogramas)
 Ejemplo: Para revisar si es más frequente que los clientes compren 2 o 3 articulos, etc...
    
 Otro ejemplo puede ser un gráfico para visualizar cuáles hamburguesas son las que forman la frequencia
 de la hamburguesas compradas.
 Con esto se puede calcular probabilidad para la compra de cualquier hamburguesa.
+
+
+* Sesion 2
+Las claves de producto reflejan diferentes productos
+por motivos de confidencialidad no se compartieron la descripción de los productos.
+
+Las gráficas no deben estar muy cargadas de información para que sean fáciles de leer.
+
+Para esto tienen más sentidos las tablas que las gráficas.
+
+#+BEGIN_SRC python
+  data.groupby(["Día", 'Grupo', 'Clave platillo'])['Catidad'].sum().reset_index(
+  ).sort_values(['Día', 'Cantidad'], ascending=False)
+#+END_SRC
+
+
+O también se puede usar pivottable.
+Um heatmap también se pudiera aplicar.
+
+Otro analizis util sería analizar fin de semana con los días de semana.
+
+
+TIP:
+Encontrar correlaciones entre los prodoctos que se venden más
 
