@@ -11,6 +11,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 data = pd.read_csv("sample_semanai.csv")
 
+data = data.drop_duplicates().iloc[:]
 data_ham = data[data["Tipo de grupo"] == "Alimentos"]
 ham_hist = pyx.histogram(data_ham, x="Clave platillo")
 
@@ -35,7 +36,7 @@ app.layout = html.Div([
                         },
                     ], 'layout': {}
                 }
-            ),
+            )]),
 
         html.Div([
             html.H3('Histograma de Bebidas'),
@@ -53,7 +54,7 @@ app.layout = html.Div([
             )
         ])
 
-    ])
+    ])])
 
 app.css.append_css({
     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
