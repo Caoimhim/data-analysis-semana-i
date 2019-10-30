@@ -45,3 +45,19 @@ TIP:
 Encontrar correlaciones entre los prodoctos que se venden más
 
 * Sesión 3
+
+Hacer un modelo de la probabilidad de pedir un producto.
+
+Por ejemplo, CLA1 + entradas
+
+que tan frecuentre se pida el CLA1 o cualquier otra entrada?
+
+describir como varia la probabilidad de que se pida una entrada.
+
+La base será el promedio
+
+Tambien es necesario encontrar le frecuencia, para poder describir cuando es mas alto
+y cuanto es mas alto
+
+Esto se relacionara con los grupos de edad, y con quien visita, tanto de como
+las otras cosas que han pedido
