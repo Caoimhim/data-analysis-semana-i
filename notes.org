@@ -30,7 +30,7 @@ Las gráficas no deben estar muy cargadas de información para que sean fáciles
 Para esto tienen más sentidos las tablas que las gráficas.
 
 #+BEGIN_SRC python
-  data.groupby(["Día", 'Grupo', 'Clave platillo'])['Catidad'].sum().reset_index(
+  data.groupby(["Día", 'Grupo', 'Clave platillo'])['Cantidad'].sum().reset_index(
   ).sort_values(['Día', 'Cantidad'], ascending=False)
 #+END_SRC
 
