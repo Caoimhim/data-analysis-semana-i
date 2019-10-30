@@ -14,6 +14,6 @@ ham_hist = pyx.histogram(data_ham, x="Clave platillo")
 
 data_bebidas = data[data["Tipo de grupo"] == "Bebidas"]
 bebidas_hist = pyx.histogram(data_bebidas, x="Clave platillo")
-bebidas_hist.show()
 
-fig = ff.create_dendrogram()
+for i in data["Día"]:
+    print(i)

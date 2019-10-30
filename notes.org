@@ -44,3 +44,4 @@ Otro analizis util sería analizar fin de semana con los días de semana.
 TIP:
 Encontrar correlaciones entre los prodoctos que se venden más
 
+* Sesión 3
