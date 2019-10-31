@@ -61,3 +61,9 @@ y cuanto es mas alto
 
 Esto se relacionara con los grupos de edad, y con quien visita, tanto de como
 las otras cosas que han pedido
+* Sesion 4
+** Regresion logistica
+
+Un modelo de regresion que nos permite calcular y predecir probabilidades
+
+
